@@ -9,11 +9,11 @@ public class Library {
     private static final int OUVERTURE = 1;
     private static final int FERMETURE = 7;
     private static final int STOCK_MAX_DVD = 3;
-    private List<Dvd> dvds = new ArrayList<>();
-    private List<Cd> cds = new ArrayList<>();
-    private List<Book> books = new ArrayList<>();
+    private ArrayList<Dvd> dvds = new ArrayList<>();
+    private ArrayList<Cd> cds = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
 
-    public Library (List<Dvd> dvds, List<Cd> cds, List<Book> books){
+    public Library (ArrayList<Dvd> dvds, ArrayList<Cd> cds, ArrayList<Book> books){
         this.dvds = dvds;
         this.books = books;
         this.cds = cds;
@@ -33,10 +33,28 @@ public class Library {
     }
 
 
+
+
     public boolean isOpen(int hour) {
+        if (hour >= FERMETURE || hour < OUVERTURE)
+            return false;
+        else
+            return true;
     }
 
-    public ArrayList<Book> putBooks(List<Book> books) {
+    public ArrayList<Book> putBooks(ArrayList<Book> books) {
+        this.books.addAll(books);
+        return this.books;
+    }
+
+    public ArrayList<Dvd> putDvds(ArrayList<Dvd> dvds) {
+        this.dvds.addAll(dvds);
+        return this.dvds;
+    }
+
+    public ArrayList<Cd> putCds(ArrayList<Cd> cds) {
+        this.cds.addAll(cds);
+        return this.cds;
     }
 }
 

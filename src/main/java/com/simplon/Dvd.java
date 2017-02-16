@@ -21,4 +21,24 @@ public class Dvd extends Numerique {
                 ", is3d=" + is3d +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Dvd dvd = (Dvd) o;
+
+        if (is3d != dvd.is3d) return false;
+        return movie == dvd.movie;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (movie != null ? movie.hashCode() : 0);
+        result = 31 * result + (is3d ? 1 : 0);
+        return result;
+    }
 }

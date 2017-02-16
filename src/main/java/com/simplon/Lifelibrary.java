@@ -19,12 +19,12 @@ public class Lifelibrary
         Dvd dvd1 = new Dvd("dvd1", 120, Dvd.Movie.HORROR,false);
         Dvd dvd2 = new Dvd("dvd2", 160, Dvd.Movie.ACTION,true);
         Dvd dvd3 = new Dvd("dvd3", 175, Dvd.Movie.MUSICAL,false);
-        Library library1 = new Library(Arrays.asList(dvd1,dvd2,dvd3), Arrays.asList(cd1,cd2,cd3),Arrays.asList(book1,book2,book3));
+
 
         System.out.println(book1);
         System.out.println(cd1);
         System.out.println(dvd1);
-        System.out.println(library1);
+
 
 
     }
